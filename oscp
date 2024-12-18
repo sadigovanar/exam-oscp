@@ -3,8 +3,9 @@ nmap -sU 192.168.228.97 #udp port scan
 nmap --script vuln 192.168.228.97
 nmap -sVCS -Pn -p- 192.168.228.25
 
-
-
-
-web enum
+web enumuration
+gobuster dir -u https://192.168.228.25:9999 -w /usr/share/wordlists/dirb/common.txt -b 403,404 -x .php,.xml,.txt -r
+gobuster dir -u http://192.168.167.48:1898 -w /usr/share/wordlists/dirb/common.txt
 dirb http://192.168.228.25:8082 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+
+curl command

@@ -1,0 +1,12 @@
+nmap scan 
+nmap -sVCS -Pn -p- 192.168.228.25
+nmap -p- 192.168.228.25
+nmap --script vuln 192.168.228.25
+nmap -Pn -n 192.168.228.25 -sC -sV -p- --open 
+
+
+if web dirbuster go buster 
+gobuster dir -u http://192.168.228.25 -w /usr/share/wordlists/dirb/common.txt -b 403,404 -x .php,.xml,.txt -r
+gobuster dir -w '/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt' -u http://192.168.228.25:8280 -t 82 -b 400,401,403,404 -x lsp,txt,ico --exclude-length 0
+dirb http://192.168.228.25
+dirb http://192.168.228.25 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt

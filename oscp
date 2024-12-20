@@ -2,6 +2,7 @@ nmap -p- 192.168.228.97
 nmap -sU 192.168.228.97 #udp port scan 
 nmap --script vuln 192.168.228.97
 nmap -sVCS -Pn -p- 192.168.228.25
+nmap -sV --script=http-php-version ip
 
 web enumuration
 gobuster dir -u https://192.168.228.25:9999 -w /usr/share/wordlists/dirb/common.txt -b 403,404 -x .php,.xml,.txt -r
